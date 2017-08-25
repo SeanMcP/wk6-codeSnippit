@@ -1,29 +1,24 @@
-<div class="snipGrid">
-  VIEW.MUSTACHE
-  {{#data}}
-      <div class="shortSnip">
-        <h3>{{title}}</h3>
-        <div class="code short">
-          {{code}}
-        </div>
-        <p>Language: {{language}}</p>
-        {{#public}}
-          <p>Public</p>
-        {{/public}}
-        {{^public}}
-          <p>Private</p>
-        {{/public}}
-      </div>
-  {{/data}}
-  <a href="/save/{{_id}}">Save</a>
-</div>
-
-<!-- [ { _id: 59a054593cc65a066bf043d8,
-    author: 'sean',
-    title: 'js',
-    code: 'js',
-    note: 'js',
-    language: 'js',
-    public: true,
-    __v: 0,
-    tag: [ 'js' ] } ] -->
+{{#data}}
+  <form class="editSnippit" action="/edit/{{_id}}" method="post">
+    <input type="text" name="title" value="{{title}}" placeholder="Title" required>
+    <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// code" required autofocus>{{code}}</textarea>
+    <textarea name="note" cols="80" placeholder="Comments">{{note}}</textarea>
+    <input type="text" name="language" value="{{language}}" placeholder="Language (JS, PHP, Ruby, etc.)">
+    <input type="text" name="tag" value="{{#tag}}{{.}} {{/tag}}" placeholder="Tags">
+    <select class="" name="public">
+      {{#public}}
+        <option value="true" selected>Public</option>
+        <option value="">Private</option>
+      {{/public}}
+      {{^public}}
+        <option value="true">Public</option>
+        <option value="" selected>Private</option>
+      {{/public}}
+    </select>
+    <button type="submit" name="button">Save</button>
+    <a href="/delete/{{_id}}" class="delete">Delete</a>
+  </form>
+{{/data}}
+{{^data}}
+  <p>Uh oh! Something went wrong.</p>
+{{/data}}

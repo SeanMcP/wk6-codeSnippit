@@ -23,6 +23,41 @@
   padding: 15px;
   text-decoration: none;
 }
+.mono {
+  font-family: monospace;
+}
 .short {
   max-height: 100px;
+}
+.editSnippit {
+  border: 1px solid lightgray;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 20px auto 40px;
+  width: 500px;
+}
+.editSnippit > * {
+  margin: 10px 20px;
+}
+.editSnippit label {
+  flex: 1 8%;
+}
+.editSnippit input, .editSnippit textarea {
+  border: none;
+  flex: 1 90%;
+  font-size: 1em;
+  padding: 10px 0;
+}
+.editSnippit textarea.editCode {
+  background: #ddd;
+  border: none;
+  font-family: monospace;
+  font-size: 1.25em;
+  margin: 10px 20px;
+  padding: 20px;
+}
+.delete {
+  background: url('https://d30y9cdsu7xlg0.cloudfront.net/png/3823-200.png') center center no-repeat;
+  background-size: contain;
+  padding: 10px;
 }
