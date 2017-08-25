@@ -1,10 +1,8 @@
-<h2>Welcome, {{username}}!</h2>
-<h3>Your snippits:</h3>
 <div class="snipGrid">
+  VIEW.MUSTACHE
   {{#data}}
-    {{#.}}
       <div class="shortSnip">
-        <h3><a href="/view/{{_id}}">{{title}}</a></h3>
+        <h3>{{title}}</h3>
         <div class="code short">
           {{code}}
         </div>
@@ -16,10 +14,9 @@
           <p>Private</p>
         {{/public}}
       </div>
-    {{/.}}
   {{/data}}
+  <a href="/save/{{_id}}">Save</a>
 </div>
-<a href="/create">Create a new snippit!</a>
 
 <!-- [ { _id: 59a054593cc65a066bf043d8,
     author: 'sean',

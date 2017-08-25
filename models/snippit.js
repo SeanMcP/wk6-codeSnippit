@@ -3,7 +3,7 @@ mongoose.Promise = require('bluebird')
 const bcrypt = require('bcryptjs')
 const Schema = mongoose.Schema
 
-mongoose.connect('mongodb://localhost:27017/codeSnippit')
+mongoose.connect('mongodb://localhost:27017/codeSnippitDB')
 
 const snippitSchema = new Schema({
   author: {type: String, required: false},

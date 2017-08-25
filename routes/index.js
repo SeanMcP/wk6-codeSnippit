@@ -61,7 +61,6 @@ router.get('/user', requireLogin, function(req, res) {
   // let name = req.user.username
   Snippit.find({'author': req.user.username})
   .then(function(data) {
-    console.log('find data\n', data);
     res.render('user', {username: req.user.username, data: data})
   })
   .catch(function(err) {
@@ -81,7 +80,7 @@ router.get('/create', function(req, res) {
 })
 
 router.post('/create', function(req, res) {
-  console.log('req.body:\n', req.body);
+
   Snippit.create({
     author: req.user.username,
     title: req.body.title,
@@ -93,12 +92,28 @@ router.post('/create', function(req, res) {
   })
   .then(function(data) {
     console.log('.create data:\n', data)
-    res.render('user', {username: req.user.username, data: data})
+    res.redirect('/user')
   })
   .catch(function(err) {
     console.log('YOU ARE GETTING AN ERROR!!!!!\n', err)
     res.redirect('/')
   })
+})
+
+router.get('/view/:id', function(req, res) {
+  if (req.params.id === 'main.css') {
+    res.render('view', {data: req.session.data});
+  } else {
+    req.session.data = null;
+    Snippit.find({'_id': req.params.id})
+    .then(function(data) {
+      req.session.data = data;
+      res.render('view', {data: data})
+    })
+    .catch(function(err) {
+      console.log('YOU ARE GETTING AN ERROR: ', err);
+    })
+  }
 })
 
 module.exports = router

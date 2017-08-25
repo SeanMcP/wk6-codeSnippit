@@ -1,0 +1,28 @@
+.snipGrid {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: scroll;
+}
+.shortSnip {
+  border: 1px solid lightgray;
+  flex: 0 25%;
+  margin: 10px;
+  padding: 10px 0;
+}
+.shortSnip > * {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.code {
+  background: #ddd;
+  border-radius: 10px;
+  color: #333;
+  font-family: monospace;
+  overflow: scroll;
+  overflow-x: scroll;
+  padding: 15px;
+  text-decoration: none;
+}
+.short {
+  max-height: 100px;
+}
