@@ -1,0 +1,22 @@
+<h2>Create a new snippit</h2>
+
+<form class="" action="/create" method="post">
+  <label for="title">Title:</label>
+  <input type="text" name="title" value="" placeholder="" autofocus required>
+  <label for="author">Created by:</label>
+  <input type="text" name="author" value="{{username}}" placeholder="" disabled>
+  <label for="code">Code:</label>
+  <textarea name="code" rows="8" cols="80" required></textarea>
+  <label for="note">Comment:</label>
+  <textarea name="note" rows="4" cols="80"></textarea>
+  <label for="language">Language:</label>
+  <input type="text" name="language" value="" placeholder="">
+  <label for="tag">Tags:</label>
+  <input type="text" name="tag" value="" placeholder="">
+  <label for="public">Share:</label>
+  <select class="" name="public">
+    <option value="true" selected>Public</option>
+    <option value="false">Private</option>
+  </select>
+  <button type="submit" name="button">Create</button>
+</form>

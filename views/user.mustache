@@ -1,0 +1,26 @@
+<h2>Welcome, {{username}}!</h2>
+<h3>Your snippits:</h3>
+<div class="">
+  {{#data}}
+    {{#.}}
+      <a href="/view/{{_id}}">
+        <div class="shortSnip">
+          <h3>{{title}}</h3>
+          <textarea name="" rows="4" cols="40">{{code}}</textarea>
+          <p>{{language}}</p>
+        </div>
+      </a>
+    {{/.}}
+  {{/data}}
+</div>
+<a href="/create">Create a new snippit!</a>
+
+<!-- [ { _id: 59a054593cc65a066bf043d8,
+    author: 'sean',
+    title: 'js',
+    code: 'js',
+    note: 'js',
+    language: 'js',
+    public: true,
+    __v: 0,
+    tag: [ 'js' ] } ] -->
