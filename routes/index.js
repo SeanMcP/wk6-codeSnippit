@@ -57,8 +57,8 @@ router.post('/create', function(req, res) {
     title: req.body.title,
     code: req.body.code,
     note: req.body.note,
-    language: req.body.language.replace(/\s+/g, '').toLowerCase().split(','),
-    tag: req.body.tag.replace(/\s+/g, '').toLowerCase().split(','),
+    language: req.body.language.replace(/\s+/g, '').toLowerCase().split(',').filter(n => n),
+    tag: req.body.tag.replace(/\s+/g, '').toLowerCase().split(',').filter(n => n),
     public: Boolean(req.body.public)
   })
   .then(function(data) {

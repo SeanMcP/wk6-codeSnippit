@@ -16,11 +16,11 @@
 .shortSnip {
   border: 1px solid lightgray;
   display: flex;
-  flex: 0 25%;
+  flex: 0 30%;
   flex-flow: column nowrap;
   font-family: 'Roboto', sans-serif;
   margin: 10px;
-  max-width: 25%;
+  max-width: 30%;
   padding: 20px 0 10px;
 }
 .shortSnip > * {

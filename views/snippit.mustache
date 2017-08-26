@@ -93,14 +93,8 @@
           </div>
 
           <select class="" name="public">
-            {{#public}}
             <option value="true" selected>Public - Anyone can view and copy this snippit</option>
             <option value="">Private - Only you can view and edit this snippit</option>
-            {{/public}}
-            {{^public}}
-            <option value="true">Public - Anyone can view and copy this snippit</option>
-            <option value="" selected>Private - Only you can view and edit this snipppit</option>
-            {{/public}}
           </select>
           <button type="submit" name="button">Create</button>
         </form>
