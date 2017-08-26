@@ -1,4 +1,7 @@
 <h2>{{username}}'s snips</h2>
+{{#profile}}
+  <a href="/create">Create a new snippit!</a>
+{{/profile}}
 <div class="snipGrid">
   {{#data}}
     {{#.}}
@@ -7,8 +10,8 @@
         <div class="code short">
           <pre><code>{{code}}</code></pre>
         </div>
-        <p>Language: {{#language}}<a href="/language/{{.}}" class="tag">{{.}}</a> {{/language}}</p>
-        <p>Tags: {{#tag}}<a href="/tag/{{.}}" class="tag">{{.}}</a> {{/tag}}</p>
+        <p>Language: {{#language}}<a href="/user/{{username}}/language/{{.}}" class="tag">{{.}}</a> {{/language}}</p>
+        <p>Tags: {{#tag}}<a href="/user/{{username}}/tag/{{.}}" class="tag">{{.}}</a> {{/tag}}</p>
         {{#public}}
           <p>Public</p>
         {{/public}}

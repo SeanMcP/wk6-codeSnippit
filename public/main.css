@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Roboto+Mono|Roboto:400,700');
 </style>
 
-header * {
+* {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 #logo {
@@ -61,35 +61,66 @@ code {
   border: 1px solid lightgray;
   display: flex;
   flex-flow: row wrap;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   margin: 20px auto 40px;
+  padding: 10px 0 20px;
   width: 500px;
 }
 .editSnippit > * {
-  margin: 10px 20px;
+  margin: 10px 20px 0;
 }
 .editSnippit label {
-  flex: 1 8%;
-}
-.editSnippit input.title {
-  font-size: 2em;
-  font-weight: 700;
-}
-.editSnippit input, .editSnippit textarea {
-  border: none;
   flex: 1 90%;
-  font-size: 1em;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin: 0 20px;
   padding: 10px 0;
 }
+.editSnippit select {
+  flex: 1 60%;
+  font-size: 0.8em;
+}
+.editSnippit option {
+  font-size: 3em;
+}
+.editSnippit input, .editSnippit textarea {
+  background: #f1f1f1;
+  border-bottom: none;
+  border-left: 1px solid lightgray;
+  border-right: none;
+  border-top: 1px solid lightgray;
+  flex: 1 90%;
+  font-size: 1em;
+  margin: 0 20px 10px;
+  padding: 10px;
+  resize: vertical;
+}
 .editSnippit textarea.editCode {
-  background: #ddd;
-  border: none;
   font-family: 'Roboto Mono', monospace;
   font-size: 1em;
-  margin: 10px 20px;
-  padding: 20px;
+}
+.editSnippit .spaceSaver {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 10px;
+}
+.editSnippit .spaceSaver * {
+  flex: 1 40%;
+  margin: 0 10px;
+}
+.editSnippit select {
+  background: #f1f1f1;
+  border: 1px solid lightgray;
+  height: 40px;
+  margin: 20px 20px 10px;
+}
+.editSnippit button {
+  flex: 1 40%;
+  font-size: 1em;
+  padding: 10px 0
 }
 .delete {
-  background: url('https://d30y9cdsu7xlg0.cloudfront.net/png/3823-200.png') center center no-repeat;
-  background-size: contain;
+  margin-left: 0;
   padding: 10px;
 }
