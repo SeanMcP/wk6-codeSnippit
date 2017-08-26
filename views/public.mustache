@@ -4,18 +4,12 @@
     {{#.}}
       <div class="shortSnip">
         <h3><a href="/view/{{_id}}">{{title}}</a></h3>
-        <h4><a href="/user/{{author}}">{{author}}</a></h4>
-        <div class="code short">
+        <h4>By <a href="/user/{{author}}">{{author}}</a></h4>
+        <div class="code">
           <pre><code>{{code}}</code></pre>
         </div>
-        <p>Language: {{#language}}<a href="/language/{{.}}" class="tag">{{.}}</a> {{/language}}</p>
-        <p>Tags: {{#tag}}<a href="/tag/{{.}}" class="tag">{{.}}</a> {{/tag}}</p>
-        {{#public}}
-          <p>Public</p>
-        {{/public}}
-        {{^public}}
-          <p>Private</p>
-        {{/public}}
+        <p>Language: {{#language}}<a href="/language/{{.}}" class="tag blue">{{.}}</a> {{/language}}</p>
+        <p>Tags: {{#tag}}<a href="/tag/{{.}}" class="tag orange">{{.}}</a> {{/tag}}</p>
       </div>
     {{/.}}
   {{/data}}

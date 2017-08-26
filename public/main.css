@@ -15,23 +15,30 @@
 }
 .shortSnip {
   border: 1px solid lightgray;
-  flex: 1 25%;
+  display: flex;
+  flex: 0 25%;
+  flex-flow: column nowrap;
+  font-family: 'Roboto', sans-serif;
   margin: 10px;
-  padding: 10px 0;
+  max-width: 25%;
+  padding: 20px 0 10px;
 }
 .shortSnip > * {
-  margin-left: 10px;
-  margin-right: 10px;
+  flex: 1 50%;
+  margin: 0 20px 10px;
+}
+.shortSnip a {
+  text-decoration: none;
 }
 .code {
-  background: #ddd;
-  border-radius: 10px;
-  color: #333;
-  max-height: 100px;
+  background: #f1f1f1;
+  border-left: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  min-height: 100px;
+  max-height: 200px;
   overflow: scroll;
-  padding: 15px;
-  text-decoration: none;
-  width: 90%;
+  padding: 10px;
+  word-break: break-all;
 }
 pre {
   margin: 0;
@@ -39,23 +46,18 @@ pre {
 code {
   font-family: 'Roboto Mono', monospace;
 }
-.mono {
-  font-family: 'Roboto Mono', monospace;
-}
 .tag {
-  background: lightblue;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   color: white;
   text-decoration: none;
   padding: 2px 5px;
 }
-.tag:hover {
-  border: none;
-  top: 2px;
+.orange {
+  background: orange;
 }
-.short {
-  max-height: 100px;
+.blue {
+  background: blue;
 }
 .editSnippit {
   border: 1px solid lightgray;
