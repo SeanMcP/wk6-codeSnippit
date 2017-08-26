@@ -1,3 +1,13 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Courgette|Roboto+Mono|Roboto:400,700');
+</style>
+
+header * {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+#logo {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
 .snipGrid {
   display: flex;
   flex-flow: row wrap;
@@ -5,7 +15,7 @@
 }
 .shortSnip {
   border: 1px solid lightgray;
-  flex: 0 25%;
+  flex: 1 25%;
   margin: 10px;
   padding: 10px 0;
 }
@@ -17,14 +27,32 @@
   background: #ddd;
   border-radius: 10px;
   color: #333;
-  font-family: monospace;
+  max-height: 100px;
   overflow: scroll;
-  overflow-x: scroll;
   padding: 15px;
   text-decoration: none;
+  width: 90%;
+}
+pre {
+  margin: 0;
+}
+code {
+  font-family: 'Roboto Mono', monospace;
 }
 .mono {
-  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
+}
+.tag {
+  background: lightblue;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  color: white;
+  text-decoration: none;
+  padding: 2px 5px;
+}
+.tag:hover {
+  border: none;
+  top: 2px;
 }
 .short {
   max-height: 100px;
@@ -42,6 +70,10 @@
 .editSnippit label {
   flex: 1 8%;
 }
+.editSnippit input.title {
+  font-size: 2em;
+  font-weight: 700;
+}
 .editSnippit input, .editSnippit textarea {
   border: none;
   flex: 1 90%;
@@ -51,8 +83,8 @@
 .editSnippit textarea.editCode {
   background: #ddd;
   border: none;
-  font-family: monospace;
-  font-size: 1.25em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1em;
   margin: 10px 20px;
   padding: 20px;
 }

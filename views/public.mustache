@@ -1,9 +1,10 @@
-<h2>{{username}}'s snips</h2>
+<h3>Public snippits:</h3>
 <div class="snipGrid">
   {{#data}}
     {{#.}}
       <div class="shortSnip">
         <h3><a href="/view/{{_id}}">{{title}}</a></h3>
+        <h4><a href="/user/{{author}}">{{author}}</a></h4>
         <div class="code short">
           <pre><code>{{code}}</code></pre>
         </div>

@@ -10,7 +10,7 @@ const snippitSchema = new Schema({
   title: {type: String, required: false},
   code: {type: String, required: false},
   note: String,
-  language: String,
+  language: [String],
   tag: [String],
   public: Boolean
 })

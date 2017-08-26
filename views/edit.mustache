@@ -1,7 +1,6 @@
 {{#data}}
-  <form class="editSnippit" action="/copy" method="post">
-    <input class="title" type="text" name="title" value="{{title}}" placeholder="Title">
-    <input type="text" name="author" value="{{author}}">
+  <form class="editSnippit" action="/edit/{{_id}}" method="post">
+    <input class="title" type="text" name="title" value="{{title}}" placeholder="Title" required>
     <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// code" required autofocus>{{code}}</textarea>
     <textarea name="note" cols="80" placeholder="Comments">{{note}}</textarea>
     <input type="text" name="language" value="{{#language}}{{.}}, {{/language}}" placeholder="Language (JS, PHP, Ruby, etc.)">
@@ -16,7 +15,8 @@
         <option value="" selected>Private</option>
       {{/public}}
     </select>
-    <button type="submit" name="button">Copy Snip</button>
+    <button type="submit" name="button">Save</button>
+    <a href="/delete/{{_id}}" class="delete">Delete</a>
   </form>
 {{/data}}
 {{^data}}
