@@ -139,8 +139,8 @@ router.get('/signup', function(req, res) {
 
 router.post('/signup', function(req, res) {
   User.create({
-    username: req.body.username,
-    password: req.body.password
+    username: req.body.username.toLowerCase(),
+    password: req.body.password.toLowerCase()
   })
   .then(function(data) {
     res.redirect('/')

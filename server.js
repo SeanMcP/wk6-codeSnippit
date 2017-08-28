@@ -64,7 +64,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: new(require('express-sessions'))({
-      storage: 'mongodb'
+    storage: 'mongodb'
   })
 }))
 
