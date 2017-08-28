@@ -127,7 +127,7 @@ router.get('/profile', requireLogin, function(req, res) {
 router.get('/public', function(req, res) {
   Snippit.find({'public': true})
   .then(function(data) {
-    res.render('public', {data: data})
+    res.render('public', {user: req.user, data: data})
   })
   .catch(function(err) {
     res.send(err)

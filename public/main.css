@@ -1,12 +1,46 @@
 <style>
-@import url('https://fonts.googleapis.com/css?family=Courgette|Roboto+Mono|Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Roboto+Mono|Roboto:300,400,700');
 </style>
 
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin: -8px;
+}
 * {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
+header {
+  align-items: center;
+  background: #1A237E;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+nav {
+  color: white;
+  font-weight: 300;
+  margin-right: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 6px;
+}
+nav a:hover, nav a:active {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
 #logo {
+  color: white;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+main {
+  margin: 20px;
 }
 .snipGrid {
   display: flex;
@@ -15,6 +49,7 @@
 }
 .shortSnip {
   border: 1px solid lightgray;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   display: flex;
   flex: 0 30%;
   flex-flow: column nowrap;
@@ -22,6 +57,9 @@
   margin: 10px;
   max-width: 30%;
   padding: 20px 0 10px;
+}
+.shortSnip:hover {
+  box-shadow: none;
 }
 .shortSnip > * {
   flex: 1 50%;
