@@ -42,6 +42,31 @@ nav a:hover, nav a:active {
 main {
   margin: 20px;
 }
+.loginSignupContainer {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+.loginSignup {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 0.9em;
+}
+.loginSignup > * {
+  margin: 10px 0;
+  padding: 10px;
+}
+.loginSignup input {
+  flex: 1 85%;
+  font-size: 0.9em;
+}
+.loginSignup button {
+  flex: 1 80%;
+  font-size: 1em;
+}
+.loginSignupContainer p {
+  text-align: center;
+}
 .snipGrid {
   display: flex;
   flex-flow: row wrap;

@@ -10,15 +10,13 @@
   </nav>
 </header>
 <main>
-  <h2>Sign up</h2>
-
-  <form class="loginSignup" action="/signup" method="post">
-    <label for="username">Username:</label>
-    <input type="text" name="username" value="" placeholder="Username" autofocus>
-    <label for="password">Password:</label>
-    <input type="password" name="password" value="" placeholder="Password">
-    <button type="submit" name="button">Sign Up</button>
-  </form>
-
-  <p>Already have an account? <a href="/login">Login!</a></p>
+  <section class="loginSignupContainer">
+    <h2>Sign Up</h2>
+    <form class="loginSignup" action="/signup" method="post">
+      <input type="text" name="username" value="" placeholder="Username" autofocus>
+      <input type="password" name="password" value="" placeholder="Password">
+      <button type="submit" name="button">Sign up</button>
+    </form>
+    <p>Already have an account? <a href="/login">Login!</a></p>
+  </section>
 </main>
