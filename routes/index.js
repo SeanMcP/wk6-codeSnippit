@@ -117,7 +117,7 @@ router.get('/logout', function(req, res) {
 router.get('/profile', requireLogin, function(req, res) {
   Snippit.find({'author': req.user.username})
   .then(function(data) {
-    res.render('user', {username: req.user.username, data: data, profile: true})
+    res.render('user', {user: req.user, username: req.user.username, data: data, profile: true})
   })
   .catch(function(err) {
     res.send('err')
@@ -165,7 +165,7 @@ router.get('/user/:author', function(req, res) {
   if (!req.user) {
     Snippit.find({'author': req.params.author, 'public': true})
     .then(function(data) {
-      res.render('user', {username: req.params.author, data: data})
+      res.render('user', {user: req.user, username: req.params.author, data: data})
     })
     .catch(function(err) {
       res.send(err)
@@ -173,7 +173,7 @@ router.get('/user/:author', function(req, res) {
   } else if (req.params.author == req.user.username) {
     Snippit.find({'author': req.params.author})
     .then(function(data) {
-      res.render('user', {username: req.params.author, data: data, profile: true})
+      res.render('user', {user: req.user, username: req.params.author, data: data, profile: true})
     })
     .catch(function(err) {
       res.send(err)
@@ -181,7 +181,7 @@ router.get('/user/:author', function(req, res) {
   } else {
     Snippit.find({'author': req.params.author, 'public': true})
     .then(function(data) {
-      res.render('user', {username: req.params.author, data: data})
+      res.render('user', {user: req.user, username: req.params.author, data: data})
     })
     .catch(function(err) {
       res.send(err)
