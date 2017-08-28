@@ -12,7 +12,10 @@
 <main>
   <h2>{{username}}'s snips</h2>
   {{#profile}}
-    <a href="/create">Create a new snippit!</a>
+    <a id="createBtn" href="/create" title="Create a new snippit">
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </a>
   {{/profile}}
   <div class="snipGrid">
     {{#data}}
