@@ -7,7 +7,6 @@ const passport = require('passport')
 
 const requireLogin = function (req, res, next) {
   if (req.user) {
-    console.log(req.user)
     next()
   } else {
     res.redirect('/')
@@ -42,7 +41,6 @@ router.post('/copy', function(req, res) {
     res.redirect('/profile')
   })
   .catch(function(err) {
-    console.log('YOU ARE GETTING AN ERROR!!!!!\n', err)
     res.send(err)
   })
 })
@@ -65,7 +63,6 @@ router.post('/create', function(req, res) {
     res.redirect('/profile')
   })
   .catch(function(err) {
-    console.log('YOU ARE GETTING AN ERROR!!!!!\n', err)
     res.redirect('/')
   })
 })
@@ -85,7 +82,6 @@ router.post('/edit/:id', function(req, res) {
     public: Boolean(req.body.public)
   })
   .then(function(data) {
-    console.log('.create data:\n', data)
     res.redirect('/profile')
   })
   .catch(function(err) {
@@ -151,7 +147,6 @@ router.post('/signup', function(req, res) {
     res.redirect('/')
   })
   .catch(function(err) {
-    console.log(err)
     res.redirect('/signup')
   })
 })
