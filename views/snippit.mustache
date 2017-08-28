@@ -1,104 +1,87 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>codeSnippit: Create</title>
-    <link rel="stylesheet" href="./main.css">
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <a href="/logout">Login/Logout</a>
-        <h1 id="logo">codeSnippit</h1>
-        <a href="/public">Public Snippits</a>
-      </header> -->
-      {{#data}}
-        {{#edit}}
-          <form class="editSnippit" action="/edit/{{_id}}" method="post">
-            <label for="title">Title</label>
-            <input class="title" type="text" name="title" value="{{title}}" placeholder="Name your snippit (required)" required autofocus>
+{{#data}}
+  {{#edit}}
+    <form class="editSnippit" action="/edit/{{_id}}" method="post">
+      <label for="title">Title</label>
+      <input class="title" type="text" name="title" value="{{title}}" placeholder="Name your snippit (required)" required autofocus>
 
-            <label for="code">Code</label>
-            <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// Add your code (required)" required>{{code}}</textarea>
+      <label for="code">Code</label>
+      <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// Add your code (required)" required>{{code}}</textarea>
 
-            <label for="note">Notes</label>
-            <textarea name="note" placeholder="Comments for yourself or others">{{note}}</textarea>
-            <div class="spaceSaver">
-              <label for="language">Language</label>
-              <label for="tag">Tags</label>
-              <input type="text" name="language" value="{{#language}}{{.}}, {{/language}}" placeholder="JS, PHP, Ruby, etc.">
-              <input type="text" name="tag" value="{{#tag}}{{.}}, {{/tag}}" placeholder="Node, boilerplate, etc.">
-            </div>
+      <label for="note">Notes</label>
+      <textarea name="note" placeholder="Comments for yourself or others">{{note}}</textarea>
+      <div class="spaceSaver">
+        <label for="language">Language</label>
+        <label for="tag">Tags</label>
+        <input type="text" name="language" value="{{#language}}{{.}}, {{/language}}" placeholder="JS, PHP, Ruby, etc.">
+        <input type="text" name="tag" value="{{#tag}}{{.}}, {{/tag}}" placeholder="Node, boilerplate, etc.">
+      </div>
 
-            <select class="" name="public">
-              {{#public}}
-              <option value="true" selected>Public - Anyone can view and copy this snippit</option>
-              <option value="">Private - Only you can view and edit this snippit</option>
-              {{/public}}
-              {{^public}}
-              <option value="true">Public - Anyone can view and copy this snippit</option>
-              <option value="" selected>Private - Only you can view and edit this snipppit</option>
-              {{/public}}
-            </select>
-            <button type="submit" name="button">Save</button>
-            <a href="/delete/{{_id}}" class="delete">Delete</a>
-          </form>
-        {{/edit}}
-        {{#view}}
-          <form class="editSnippit" action="/copy" method="post">
-            <label for="title">Title</label>
-            <input class="title" type="text" name="title" value="{{title}}" placeholder="Name your snippit (required)" required autofocus>
+      <select class="" name="public">
+        {{#public}}
+        <option value="true" selected>Public - Anyone can view and copy this snippit</option>
+        <option value="">Private - Only you can view and edit this snippit</option>
+        {{/public}}
+        {{^public}}
+        <option value="true">Public - Anyone can view and copy this snippit</option>
+        <option value="" selected>Private - Only you can view and edit this snipppit</option>
+        {{/public}}
+      </select>
+      <button type="submit" name="button">Save</button>
+      <a href="/delete/{{_id}}" class="delete">Delete</a>
+    </form>
+  {{/edit}}
+  {{#view}}
+    <form class="editSnippit" action="/copy" method="post">
+      <label for="title">Title</label>
+      <input class="title" type="text" name="title" value="{{title}}" placeholder="Name your snippit (required)" required autofocus>
 
-            <label for="code">Code</label>
-            <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// Add your code (required)" required>{{code}}</textarea>
+      <label for="code">Code</label>
+      <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// Add your code (required)" required>{{code}}</textarea>
 
-            <label for="note">Notes</label>
-            <textarea name="note" placeholder="Comments for yourself or others">{{note}}</textarea>
-            <div class="spaceSaver">
-              <label for="language">Language</label>
-              <label for="tag">Tags</label>
-              <input type="text" name="language" value="{{#language}}{{.}}, {{/language}}" placeholder="JS, PHP, Ruby, etc.">
-              <input type="text" name="tag" value="{{#tag}}{{.}}, {{/tag}}" placeholder="Node, boilerplate, etc.">
-            </div>
+      <label for="note">Notes</label>
+      <textarea name="note" placeholder="Comments for yourself or others">{{note}}</textarea>
+      <div class="spaceSaver">
+        <label for="language">Language</label>
+        <label for="tag">Tags</label>
+        <input type="text" name="language" value="{{#language}}{{.}}, {{/language}}" placeholder="JS, PHP, Ruby, etc.">
+        <input type="text" name="tag" value="{{#tag}}{{.}}, {{/tag}}" placeholder="Node, boilerplate, etc.">
+      </div>
 
-            <select class="" name="public">
-              {{#public}}
-              <option value="true" selected>Public - Anyone can view and copy this snippit</option>
-              <option value="">Private - Only you can view and edit this snippit</option>
-              {{/public}}
-              {{^public}}
-              <option value="true">Public - Anyone can view and copy this snippit</option>
-              <option value="" selected>Private - Only you can view and edit this snipppit</option>
-              {{/public}}
-            </select>
-            <button type="submit" name="button">Copy this snippit</button>
-          </form>
-        {{/view}}
-      {{/data}}
-      {{#create}}
-        <form class="editSnippit" action="/create" method="post">
-          <label for="title">Title</label>
-          <input class="title" type="text" name="title" value="{{title}}" placeholder="Name your snippit (required)" required autofocus>
+      <select class="" name="public">
+        {{#public}}
+        <option value="true" selected>Public - Anyone can view and copy this snippit</option>
+        <option value="">Private - Only you can view and edit this snippit</option>
+        {{/public}}
+        {{^public}}
+        <option value="true">Public - Anyone can view and copy this snippit</option>
+        <option value="" selected>Private - Only you can view and edit this snipppit</option>
+        {{/public}}
+      </select>
+      <button type="submit" name="button">Copy this snippit</button>
+    </form>
+  {{/view}}
+{{/data}}
+{{#create}}
+  <form class="editSnippit" action="/create" method="post">
+    <label for="title">Title</label>
+    <input class="title" type="text" name="title" value="{{title}}" placeholder="Name your snippit (required)" required autofocus>
 
-          <label for="code">Code</label>
-          <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// Add your code (required)" required>{{code}}</textarea>
+    <label for="code">Code</label>
+    <textarea name="code" rows="8" cols="80" class="editCode" placeholder="// Add your code (required)" required>{{code}}</textarea>
 
-          <label for="note">Notes</label>
-          <textarea name="note" placeholder="Comments for yourself or others">{{note}}</textarea>
-          <div class="spaceSaver">
-            <label for="language">Language</label>
-            <label for="tag">Tags</label>
-            <input type="text" name="language" value="{{#language}}{{.}}, {{/language}}" placeholder="JS, PHP, Ruby, etc.">
-            <input type="text" name="tag" value="{{#tag}}{{.}}, {{/tag}}" placeholder="Node, boilerplate, etc.">
-          </div>
+    <label for="note">Notes</label>
+    <textarea name="note" placeholder="Comments for yourself or others">{{note}}</textarea>
+    <div class="spaceSaver">
+      <label for="language">Language</label>
+      <label for="tag">Tags</label>
+      <input type="text" name="language" value="{{#language}}{{.}}, {{/language}}" placeholder="JS, PHP, Ruby, etc.">
+      <input type="text" name="tag" value="{{#tag}}{{.}}, {{/tag}}" placeholder="Node, boilerplate, etc.">
+    </div>
 
-          <select class="" name="public">
-            <option value="true" selected>Public - Anyone can view and copy this snippit</option>
-            <option value="">Private - Only you can view and edit this snippit</option>
-          </select>
-          <button type="submit" name="button">Create</button>
-        </form>
-      {{/create}}
-    <!-- </div>
-  </body>
-</html> -->
+    <select class="" name="public">
+      <option value="true" selected>Public - Anyone can view and copy this snippit</option>
+      <option value="">Private - Only you can view and edit this snippit</option>
+    </select>
+    <button type="submit" name="button">Create</button>
+  </form>
+{{/create}}
