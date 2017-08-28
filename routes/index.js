@@ -22,8 +22,7 @@ const login = function (req, res, next) {
 }
 
 router.get('/', login, function(req, res) {
-  res.render('login', {
-    messages: res.locals.getMessages()
+  res.render('login', {user: req.user, messages: res.locals.getMessages()
   })
 })
 
@@ -135,7 +134,7 @@ router.get('/public', function(req, res) {
 })
 
 router.get('/signup', function(req, res) {
-  res.render('signup')
+  res.render('signup', {user: req.user})
 })
 
 router.post('/signup', function(req, res) {

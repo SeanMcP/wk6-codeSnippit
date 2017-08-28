@@ -1,17 +1,24 @@
 <header>
-  <a href="/logout">Login/Logout</a>
-  <h1 id="logo">codeSnippit</h1>
-  <a href="/public">Public Snippits</a>
+  <h1 id="logo">&lt;codeSnippit&gt;</h1>
+  <nav>
+    {{#user}}
+      <a href="/user/{{username}}" ><strong>{{username}}</strong></a> | <a href="/public">Public Snippits</a> | <a href="/logout">Logout</a>
+    {{/user}}
+    {{^user}}
+      <a href="/public">Public Snippits</a> | <strong><a href="/">Login</a></strong>
+    {{/user}}
+  </nav>
 </header>
+<main>
+  <h2>Login</h2>
 
-<h2>Login</h2>
+  <form class="loginSignup" action="/login" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" value="" placeholder="Username" autofocus>
+    <label for="password">Password:</label>
+    <input type="password" name="password" value="" placeholder="Password">
+    <button type="submit" name="button">Login</button>
+  </form>
 
-<form class="loginSignup" action="/login" method="post">
-  <label for="username">Username:</label>
-  <input type="text" name="username" value="" placeholder="Username" autofocus>
-  <label for="password">Password:</label>
-  <input type="password" name="password" value="" placeholder="Password">
-  <button type="submit" name="button">Login</button>
-</form>
-
-<p>Don't have an account? <a href="/signup">Sign up!</a></p>
+  <p>Don't have an account? <a href="/signup">Sign up!</a></p>
+</main>
