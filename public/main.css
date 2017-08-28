@@ -12,6 +12,15 @@ body {
 * {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
+a {
+  color: #304FFE;
+}
+a:hover, a:active {
+  color: #536DFE;
+}
+a:visited {
+  color: #1A237E;
+}
 header {
   align-items: center;
   background: #1A237E;
@@ -24,7 +33,7 @@ nav {
   font-weight: 300;
   margin-right: 20px;
 }
-nav a {
+nav a, nav a:visited {
   color: white;
   text-decoration: none;
   padding: 4px 6px;
@@ -85,7 +94,7 @@ main {
   background: linear-gradient(135deg, #FF4081, #F50057);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.bar {
+#createBtn .bar {
   background: white;
   height: 8px;
   position: fixed;
@@ -93,8 +102,36 @@ main {
   margin-left: 24px;
   width: 32px;
 }
-.bar:last-child {
+#createBtn .bar:last-child {
   transform: rotate(90deg);
+}
+.fill {
+  background: lightgray;
+  height: 100vh;
+  margin: -20px 0 -40px;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+#backX {
+  height: 48px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 48px;
+}
+#backX .bar {
+  background: gray;
+  height: 8px;
+  margin-top: 20px;
+  margin-left: 8px;
+  position: fixed;
+  transform: rotate(45deg);
+  width: 32px;
+}
+#backX .bar:last-child {
+  transform: rotate(135deg);
 }
 .snipGrid {
   display: flex;
@@ -145,14 +182,25 @@ code {
   text-decoration: none;
   padding: 2px 5px;
 }
-.orange {
-  background: orange;
+.tag:hover, .tag:active, .tag:visited {
+  color: white;
 }
-.blue {
-  background: blue;
+.orange {
+  background: #FFAB00;
+}
+.orange:active, .orange:hover {
+  background: #FFC400;
+}
+.green {
+  background: #00C853;
+}
+.green:hover, .green:active {
+  background: #00E676;
 }
 .editSnippit {
-  border: 1px solid lightgray;
+  background: white;
+  border: 1px solid #999;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-flow: row wrap;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
