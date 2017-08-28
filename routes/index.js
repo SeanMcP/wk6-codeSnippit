@@ -67,7 +67,16 @@ router.post('/create', function(req, res) {
 })
 
 router.get('/delete/:id', requireLogin, function(req, res) {
-  Snippit.findOne({_id: req.params.id}).remove().exec()
+  // Snippit.findOne({_id: req.params.id}).remove().exec()
+  Snippit.findOne({_id: req.params.id})
+  .then(function(data) {
+    if(data.author == req.user.username) {
+      data.remove().exec()
+    }
+  })
+  .catch(function(err) {
+    res.send(err)
+  })
   res.redirect('/profile')
 })
 
